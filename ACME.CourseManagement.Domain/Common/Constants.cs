@@ -8,6 +8,7 @@ namespace ACME.CourseManagement.Domain.Common
 {
     internal static class Constants
     {
-        public static int MINIMUN_AGE = 18;
+        public static int MinimunAge = 18;
+        public static int MaximunAge = 100;
     }
 }
