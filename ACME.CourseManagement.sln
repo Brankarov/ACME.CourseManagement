@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Domain", "ACME.CourseManagement.Domain\ACME.CourseManagement.Domain.csproj", "{C1644745-F325-457C-B2CB-5E731F7CB759}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Test", "ACME.CourseManagement.Test\ACME.CourseManagement.Test.csproj", "{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C1644745-F325-457C-B2CB-5E731F7CB759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1644745-F325-457C-B2CB-5E731F7CB759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1644745-F325-457C-B2CB-5E731F7CB759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
