@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Data"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.ApplicationServices", "ACME.CourseManagement.ApplicationServices\ACME.CourseManagement.ApplicationServices.csproj", "{62D7839E-93D1-45BB-9C53-5005ADFAE2DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Services", "ACME.CourseManagement.Services\ACME.CourseManagement.Services.csproj", "{81408DD5-C485-4252-8800-ECE442ACBE64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{62D7839E-93D1-45BB-9C53-5005ADFAE2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62D7839E-93D1-45BB-9C53-5005ADFAE2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62D7839E-93D1-45BB-9C53-5005ADFAE2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81408DD5-C485-4252-8800-ECE442ACBE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81408DD5-C485-4252-8800-ECE442ACBE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81408DD5-C485-4252-8800-ECE442ACBE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81408DD5-C485-4252-8800-ECE442ACBE64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
