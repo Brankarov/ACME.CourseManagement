@@ -1,4 +1,5 @@
-﻿using ACME.CourseManagement.Domain;
+﻿using ACME.CourseManagement.Data.Interfaces;
+using ACME.CourseManagement.Domain;
 using ACME.CourseManagement.Domain.Common;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,11 @@ namespace ACME.CourseManagement.Services.Services
 {
     public class RegistrationService
     {
-        public List<Student> Students;
+        private readonly IStudentRepository _studentRepository;
 
-
-        public RegistrationService()
+        public RegistrationService( IStudentRepository studentRepository)
         {
-            Students = new List<Student>();
+            _studentRepository = studentRepository;
         }
 
         public bool RegisterStudent(string name, int age)
@@ -26,9 +26,10 @@ namespace ACME.CourseManagement.Services.Services
                 {
                     throw new ArgumentException("The age is not allowed to enroll");
                 }
+
                 var student = new Student(name, age);
 
-                Students.Add(student);
+                _studentRepository.Add(student);
                 return true;
 
             }
@@ -37,8 +38,6 @@ namespace ACME.CourseManagement.Services.Services
 
                 throw new Exception(e.ToString());
             }
-
-
         }
     }
 }

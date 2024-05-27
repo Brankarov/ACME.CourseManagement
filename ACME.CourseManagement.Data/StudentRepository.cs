@@ -1,4 +1,5 @@
-﻿using ACME.CourseManagement.Domain;
+﻿using ACME.CourseManagement.Data.Interfaces;
+using ACME.CourseManagement.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,18 @@ using System.Threading.Tasks;
 
 namespace ACME.CourseManagement.Data
 {
-    internal class StudentRepository
+    public class StudentRepository : IStudentRepository
     {
-        public List<Student> Student = new List<Student>();
+        public List<Student> StudentList = new List<Student>();
 
+        public void Add( Student student)
+        {
+            StudentList.Add(student);
+        }
+
+        public IEnumerable<Student> GetEnumerables()
+        {
+            return StudentList;
+        }
     }
 }

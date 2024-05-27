@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ACME.CourseManagement.ApplicationServices\ACME.CourseManagement.ApplicationServices.csproj" />
+    <ProjectReference Include="..\ACME.CourseManagement.Data\ACME.CourseManagement.Data.csproj" />
     <ProjectReference Include="..\ACME.CourseManagement.Domain\ACME.CourseManagement.Domain.csproj" />
   </ItemGroup>
 

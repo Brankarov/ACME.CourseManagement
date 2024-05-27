@@ -1,4 +1,5 @@
-﻿using ACME.CourseManagement.ApplicationServices.Interfaces;
+﻿using ACME.CourseManagement.ApplicationServices;
+using ACME.CourseManagement.Data.Interfaces;
 using ACME.CourseManagement.Domain;
 using System;
 using System.Collections.Generic;
@@ -10,24 +11,25 @@ namespace ACME.CourseManagement.Services.Services
 {
     public class EnrollService
     {
-        private readonly IPaymentService _paymentService;
-        private readonly List<Student> _students;
-        private readonly List<Course> _courses;
+        private readonly ICourseRepository _courseRepository;
+        private readonly IStudentRepository _studentRepository;
 
-        public EnrollService(IPaymentService paymentService)
+        public EnrollService(ICourseRepository courseRepository, IStudentRepository studentRepository)
         {
-            _students = new List<Student>();
-            _courses = new List<Course>();
+            _studentRepository = studentRepository;
+            _courseRepository = courseRepository;
         }
         public bool EnrollStudentInCourse(string studentName, int courseId)
         {
             try
             {
-                var student = _students.SingleOrDefault(x => x.Name == studentName);
-                var course = _courses.SingleOrDefault(x => x.Id == courseId);
-
-                student.EnrollCourse(course);
-                return true;
+                var student = _studentRepository.GetEnumerables().SingleOrDefault(x => x.Name == studentName);
+                var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Id == courseId);
+                if (student != null && student != null  )
+                {
+                    student.EnrollCourse(course);
+                    return true;
+                } else { return false; }
             }
             catch (Exception e)
             {
