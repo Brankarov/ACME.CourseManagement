@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACME.CourseManagement.Domain.Common
 {
-    internal static class Constants
+    public static class Constants
     {
         public static int MinimunAge = 18;
         public static int MaximunAge = 100;
