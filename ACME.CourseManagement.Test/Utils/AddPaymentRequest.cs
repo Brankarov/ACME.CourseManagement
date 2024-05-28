@@ -10,10 +10,10 @@ namespace ACME.CourseManagement.Test.Utils
     public static class AddPaymentRequest
     {
         public static PaymentRequest Default = new PaymentRequest { CourseName = "Default", Amount = 0};
-        public static PaymentRequest BigMoney = new PaymentRequest { CourseName = "History", Amount = 0};
-        public static PaymentRequest LowMoney = new PaymentRequest { CourseName = "Chemistry", Amount = 0};
-        public static PaymentRequest wrongCourse = new PaymentRequest { CourseName = "Laws", Amount = 0};
-        public static PaymentRequest Debts = new PaymentRequest { CourseName = "Math", Amount = 0};
+        public static PaymentRequest BigMoney = new PaymentRequest { CourseName = "History", Amount = 150000};
+        public static PaymentRequest LowMoney = new PaymentRequest { CourseName = "Chemistry", Amount = 75};
+        public static PaymentRequest wrongCourse = new PaymentRequest { CourseName = "Laws", Amount = 8000};
+        public static PaymentRequest Debts = new PaymentRequest { CourseName = "Math", Amount = -400};
 
         public static PaymentRequest WithCourse( this PaymentRequest request, string courseName)
         {

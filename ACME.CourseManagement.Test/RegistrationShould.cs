@@ -26,39 +26,33 @@ namespace ACME.CourseManagement.Test
         public void RegistrationwithNotAllowedAge()
         {
             var request = AddStudentRequestMother.Rudolfina;
-
-            registrationService.RegisterStudent(request);
-
             Assert.Throws<Exception>(() => { registrationService.RegisterStudent(request); });
         }
         [Fact]
         public void RegistrarionStudentWithNoName()
         {
             var request = AddStudentRequestMother.Alejandra; 
-            registrationService.RegisterStudent(request);
             Assert.Throws<Exception>(() => { registrationService.RegisterStudent(request); });
         }
         [Fact]
         public void RegistrationStudentwithNoAge()
         {
             var request = AddStudentRequestMother.Anacleta;
-            registrationService.RegisterStudent(request);
             Assert.Throws<Exception>(() => { registrationService.RegisterStudent(request); });
         }
         [Fact]
         public void RegistrationWithStudentTooOld()
         {
             var request = AddStudentRequestMother.Casimiro;
-            registrationService.RegisterStudent(request);
             Assert.Throws<Exception>(() => { registrationService.RegisterStudent(request); });
         }
+        [Fact]
         public void RegistrationWhenAStudentAlreadyExist()
         {
             var request = AddStudentRequestMother.Roberto;
             registrationService.RegisterStudent(request);
             var student = registrationService.GetAllRegisteredStudents().SingleOrDefault();
             var request2 = AddStudentRequestMother.Roberto;
-            registrationService.RegisterStudent(request2);
             Assert.Throws<Exception>(() => { registrationService.RegisterStudent(request2); });
         }
         [Fact]
@@ -70,48 +64,28 @@ namespace ACME.CourseManagement.Test
             Assert.NotNull(course);
             Assert.Equal(request.CourseName, course.Name);
             Assert.Equal(request.RegistrationFee, course.RegistrationFee);
-            Assert.Equal(request.StarDate, course.EndDate);
+            Assert.Equal(request.StarDate, course.StarDate);
             Assert.Equal(request.EndDate, course.EndDate);
         }
+        [Fact]
         public void RegistrationCourseAlreadyExist()
         {
             var request = AddCourseRequestMother.History;
             var request2 = AddCourseRequestMother.History;
             registrationService.RegistrationCourse(request);
-            registrationService.RegistrationCourse(request2);
             Assert.Throws<Exception>(() =>{ registrationService.RegistrationCourse(request2); });
         }
         [Fact]
         public void RegistrationCourseWithNullName()
         {
             var request = AddCourseRequestMother.Math;
-            registrationService.RegistrationCourse(request);
             Assert.Throws<Exception>(() => { registrationService.RegistrationCourse(request); });
         }
+        [Fact]
         public void RegistrationCourseWithNullRegistrationFee()
         {
             var request = AddCourseRequestMother.Sociology;
-            registrationService.RegistrationCourse(request);
             Assert.Throws<Exception>( () => {  registrationService.RegistrationCourse(request); });
         }
-        public void RegistrationWithStarDateNull()
-        {
-            var request = AddCourseRequestMother.Chemistry;
-            registrationService.RegistrationCourse(request);
-            Assert.Throws<Exception>(() => { registrationService.RegistrationCourse(request); });
-        }
-        public void RegistrationCourseWithStarDateNull()
-        {
-            var request = AddCourseRequestMother.Sociology;
-            registrationService.RegistrationCourse(request);
-            Assert.Throws<Exception>(() => { registrationService.RegistrationCourse(request); });
-        }
-        public void RegistrationCourseWithEndDateNull()
-        {
-            var request = AddCourseRequestMother.Physic;
-            registrationService.RegistrationCourse(request);
-            Assert.Throws<Exception>(() => { registrationService.RegistrationCourse(request); });
-        }
-
     }
 }

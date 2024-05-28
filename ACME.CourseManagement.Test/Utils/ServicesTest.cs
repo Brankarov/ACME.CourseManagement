@@ -25,6 +25,7 @@ namespace ACME.CourseManagement.Test.Utils
         {
             studentRepository = new StudentRepository();
             courseRepository = new CourseRepository();
+            paymentService = new PaymentService();
             enrollService = new EnrollService(courseRepository, studentRepository);
             courseService = new CourseService(paymentService, courseRepository);
             registrationService = new RegistrationService(studentRepository, courseRepository);

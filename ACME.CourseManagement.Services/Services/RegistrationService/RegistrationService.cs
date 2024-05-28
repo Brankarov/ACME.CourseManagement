@@ -35,9 +35,12 @@ namespace ACME.CourseManagement.Services.Services.RegistrationService
                 }
 
                 var student = new Student(request.StudentName, request.StudentAge);
-
-                _studentRepository.Add(student);
-                return true;
+                var samestudent = _studentRepository.GetEnumerables().Any(X => X.Name == request.StudentName);
+                if (!samestudent)
+                {
+                    _studentRepository.Add(student);
+                    return true;
+                } else { throw new Exception("can't be added the same student"); }
 
             }
             catch (Exception e)
@@ -56,11 +59,19 @@ namespace ACME.CourseManagement.Services.Services.RegistrationService
                 {
                     throw new Exception("the argegument is null");
                 }
+                if (request.StarDate == new DateTime(0,0,0) || request.EndDate == new DateTime(0,0,01))
+                {
+                    throw new Exception("THE DATES can't be null");
+                }
                 var course = new Course(request.CourseName, request.RegistrationFee, request.StarDate, request.EndDate);
                 if (course != null)
                 {
-                    _courseRepository.Add(course);
-                    return true;
+                    if (!(_courseRepository.GetEnumerables().Any(x => x.Name == request.CourseName)))
+                    {
+                        _courseRepository.Add(course);
+                        return true;
+                    }
+                    else { throw new Exception("cantbe added the same course"); }
                 }
                 else { return false; }
 

@@ -12,6 +12,8 @@ namespace ACME.CourseManagement.Test
         [Fact]
         public void PaymentSuccessful()
         {
+            var course = AddCourseRequestMother.History;
+            registrationService.RegistrationCourse(course);
             var request = AddPaymentRequest.BigMoney;
             var result = courseService.PaymentCourse(request);
             Assert.True(result);
@@ -27,14 +29,13 @@ namespace ACME.CourseManagement.Test
         public void PaymentWithWrongCourse()
         {
             var request = AddPaymentRequest.wrongCourse;
-            courseService.PaymentCourse(request);
-            Assert.Throws<Exception>(() => { courseService.PaymentCourse(request); });
+            var flasg = courseService.PaymentCourse(request);
+            Assert.False(flasg);
         }
         [Fact]
         public void PaymentWithnegativeMoney() 
         {
             var request = AddPaymentRequest.Debts;
-            courseService.PaymentCourse(request);
             Assert.Throws<Exception>(() => { courseService.PaymentCourse(request); }) ;
         }
     }

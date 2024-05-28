@@ -13,6 +13,10 @@ namespace ACME.CourseManagement.Test
         [Fact]
         public void EnrollSuccess()
         {
+            var student = AddStudentRequestMother.Xiomara;
+            registrationService.RegisterStudent(student);
+            var course = AddCourseRequestMother.History;
+            registrationService.RegistrationCourse(course);
             var request = AddEnrollRequest.Xiomara;
             var flag = enrollService.EnrollStudentInCourse(request);
             Assert.True(flag);
@@ -28,15 +32,15 @@ namespace ACME.CourseManagement.Test
         public void EnrollWithStudentWithNoName()
         {
             var request = AddEnrollRequest.Roxxane;
-            enrollService.EnrollStudentInCourse(request);
-            Assert.Throws<Exception>(() => { enrollService.EnrollStudentInCourse(request); });
+            var flag = enrollService.EnrollStudentInCourse(request);
+            Assert.False(flag);
         }
         [Fact]
         public void EnrollWithoutCourseName()
         {
             var request = AddEnrollRequest.Lucia;
-            enrollService.EnrollStudentInCourse(request);
-            Assert.Throws<Exception>(() => { enrollService.EnrollStudentInCourse(request); });
+            var flag = enrollService.EnrollStudentInCourse(request);
+            Assert.False(flag);
         }
 
     }
