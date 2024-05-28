@@ -10,6 +10,12 @@ namespace ACME.CourseManagement.Test.Utils
     public static class AddEnrollRequest
     {
         public static EnrollRequest Default => new EnrollRequest { StudentName = "Default", CourseName ="Default"};
+        public static EnrollRequest Xiomara => Default.WithStudent("Xiomara").WithCourse("History");
+        public static EnrollRequest Erthelwed => Default.WithStudent("Erthelwed").WithCourse("Chemestry");
+        public static EnrollRequest Roberto => Default.WithStudent("Roberto").WithCourse("IndustrialProccess");
+        public static EnrollRequest Roxxane => Default.WithStudent("").WithCourse("History");
+        public static EnrollRequest Lucia => Default.WithStudent("Lucia").WithCourse("");
+
 
         public static EnrollRequest WithStudent( this EnrollRequest request, string name)
         {

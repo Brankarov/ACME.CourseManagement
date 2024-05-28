@@ -15,6 +15,7 @@ namespace ACME.CourseManagement.Test.Utils
         public static StudentRequest Alejandra => Default.WithName("").WithAge(40);
         public static StudentRequest Anacleta => Default.WithName("Anacleta").WithAge(0);
         public static StudentRequest Rudolfina => Default.WithName("Rudolfina").WithAge(7);
+        public static StudentRequest Xiomara => Default.WithName("Xiomara").WithAge(19);
 
 
         public static StudentRequest WithName (this StudentRequest request, string name)
