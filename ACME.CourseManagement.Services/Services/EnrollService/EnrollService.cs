@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACME.CourseManagement.Services.Services
+namespace ACME.CourseManagement.Services.Services.EnrollService
 {
     public class EnrollService
     {
@@ -26,11 +26,12 @@ namespace ACME.CourseManagement.Services.Services
             {
                 var student = _studentRepository.GetEnumerables().SingleOrDefault(x => x.Name == request.StudentName);
                 var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == request.CourseName);
-                if (student != null && course != null  )
+                if (student != null && course != null)
                 {
                     student.EnrollCourse(course);
                     return true;
-                } else { return false; }
+                }
+                else { return false; }
             }
             catch (Exception e)
             {

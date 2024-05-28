@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACME.CourseManagement.Services.Services
+namespace ACME.CourseManagement.Services.Services.RegistrationService
 {
     public class RegistrationService
     {
         private readonly IStudentRepository _studentRepository;
         private readonly ICourseRepository _courseRepository;
 
-        public RegistrationService( IStudentRepository studentRepository, ICourseRepository courseRepository)
+        public RegistrationService(IStudentRepository studentRepository, ICourseRepository courseRepository)
         {
             _studentRepository = studentRepository;
             _courseRepository = courseRepository;
@@ -54,7 +54,7 @@ namespace ACME.CourseManagement.Services.Services
                     return true;
                 }
                 else { return false; }
-                
+
             }
             catch (Exception e)
             {

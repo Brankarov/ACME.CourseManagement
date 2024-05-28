@@ -12,8 +12,4 @@
     <ProjectReference Include="..\ACME.CourseManagement.Domain\ACME.CourseManagement.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfeces\" />
-  </ItemGroup>
-
 </Project>

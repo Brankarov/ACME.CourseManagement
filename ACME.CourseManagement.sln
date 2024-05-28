@@ -5,13 +5,13 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Domain", "ACME.CourseManagement.Domain\ACME.CourseManagement.Domain.csproj", "{C1644745-F325-457C-B2CB-5E731F7CB759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Test", "ACME.CourseManagement.Test\ACME.CourseManagement.Test.csproj", "{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Data", "ACME.CourseManagement.Data\ACME.CourseManagement.Data.csproj", "{29FE4305-E2B1-405D-8D88-A4A12D5AB561}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.ApplicationServices", "ACME.CourseManagement.ApplicationServices\ACME.CourseManagement.ApplicationServices.csproj", "{62D7839E-93D1-45BB-9C53-5005ADFAE2DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Services", "ACME.CourseManagement.Services\ACME.CourseManagement.Services.csproj", "{81408DD5-C485-4252-8800-ECE442ACBE64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.CourseManagement.Test", "ACME.CourseManagement.Test\ACME.CourseManagement.Test.csproj", "{368C5E03-1181-4782-B959-39CA211E95EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{C1644745-F325-457C-B2CB-5E731F7CB759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1644745-F325-457C-B2CB-5E731F7CB759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1644745-F325-457C-B2CB-5E731F7CB759}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC2C0ED8-AD80-4079-9C4D-789A0E2DB936}.Release|Any CPU.Build.0 = Release|Any CPU
 		{29FE4305-E2B1-405D-8D88-A4A12D5AB561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29FE4305-E2B1-405D-8D88-A4A12D5AB561}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29FE4305-E2B1-405D-8D88-A4A12D5AB561}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{81408DD5-C485-4252-8800-ECE442ACBE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81408DD5-C485-4252-8800-ECE442ACBE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81408DD5-C485-4252-8800-ECE442ACBE64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368C5E03-1181-4782-B959-39CA211E95EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368C5E03-1181-4782-B959-39CA211E95EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368C5E03-1181-4782-B959-39CA211E95EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368C5E03-1181-4782-B959-39CA211E95EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
