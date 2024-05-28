@@ -19,16 +19,15 @@ namespace ACME.CourseManagement.Services.Services
             _courseRepository = courseRepository;
         }
 
-        public bool PaymentCourse(decimal payment, int courseId)
+        public bool PaymentCourse(decimal payment, string courseName)
         {
             if (payment <= 0)
             {
                 throw new Exception("payment cant be null o negative");
             }
 
-            if (courseId <= 0) { throw new Exception("You must pass a course id to realize the payemnt"); }
 
-            var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Id == courseId);
+            var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == courseName);
             if (payment >= course.RegistrationFee)
             {
                 _paymentService.ProccessPayment(payment);

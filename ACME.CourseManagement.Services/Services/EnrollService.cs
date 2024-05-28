@@ -19,12 +19,12 @@ namespace ACME.CourseManagement.Services.Services
             _studentRepository = studentRepository;
             _courseRepository = courseRepository;
         }
-        public bool EnrollStudentInCourse(string studentName, int courseId)
+        public bool EnrollStudentInCourse(string studentName, string courseName)
         {
             try
             {
                 var student = _studentRepository.GetEnumerables().SingleOrDefault(x => x.Name == studentName);
-                var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Id == courseId);
+                var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == courseName);
                 if (student != null && student != null  )
                 {
                     student.EnrollCourse(course);
