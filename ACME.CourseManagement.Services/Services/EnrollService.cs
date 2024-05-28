@@ -1,4 +1,5 @@
 ﻿using ACME.CourseManagement.ApplicationServices;
+using ACME.CourseManagement.ApplicationServices.DTOs.In;
 using ACME.CourseManagement.Data.Interfaces;
 using ACME.CourseManagement.Domain;
 using System;
@@ -19,12 +20,12 @@ namespace ACME.CourseManagement.Services.Services
             _studentRepository = studentRepository;
             _courseRepository = courseRepository;
         }
-        public bool EnrollStudentInCourse(string studentName, string courseName)
+        public bool EnrollStudentInCourse(EnrollRequest request)
         {
             try
             {
-                var student = _studentRepository.GetEnumerables().SingleOrDefault(x => x.Name == studentName);
-                var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == courseName);
+                var student = _studentRepository.GetEnumerables().SingleOrDefault(x => x.Name == request.StudentName);
+                var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == request.CourseName);
                 if (student != null && course != null  )
                 {
                     student.EnrollCourse(course);

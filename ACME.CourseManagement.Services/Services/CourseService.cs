@@ -1,4 +1,5 @@
 ﻿using ACME.CourseManagement.ApplicationServices;
+using ACME.CourseManagement.ApplicationServices.DTOs.In;
 using ACME.CourseManagement.Data.Interfaces;
 using ACME.CourseManagement.Domain;
 using System;
@@ -19,22 +20,22 @@ namespace ACME.CourseManagement.Services.Services
             _courseRepository = courseRepository;
         }
 
-        public bool PaymentCourse(decimal payment, string courseName)
+        public bool PaymentCourse(PaymentRequest request)
         {
-            if (payment <= 0)
+            if (request.Amount <= 0)
             {
                 throw new Exception("payment cant be null o negative");
             }
 
 
-            var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == courseName);
+            var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == request.CourseName);
             if (course == null)
             {
                 return false;
             }
-            if (payment >= course.RegistrationFee)
+            if (request.Amount >= course.RegistrationFee)
             {
-                _paymentService.ProccessPayment(payment);
+                _paymentService.ProccessPayment(request.Amount);
                 return true;
             }
             else
