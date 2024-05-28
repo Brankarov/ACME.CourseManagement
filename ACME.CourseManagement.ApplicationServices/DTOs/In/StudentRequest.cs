@@ -8,7 +8,7 @@ namespace ACME.CourseManagement.ApplicationServices.DTOs.In
 {
     public class StudentRequest
     {
-        public string StudentName { get; set; }
+        public string? StudentName { get; set; }
         public int StudentAge { get; set; }
     }
 }

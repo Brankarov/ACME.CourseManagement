@@ -8,7 +8,7 @@ namespace ACME.CourseManagement.ApplicationServices.DTOs.In
 {
     public class CourseRequest
     {
-        public string CourseName { get; set; }
+        public string? CourseName { get; set; }
         public decimal RegistrationFee { get; set; }
         public DateTime StarDate { get; set; }
         public DateTime EndDate { get; set; }

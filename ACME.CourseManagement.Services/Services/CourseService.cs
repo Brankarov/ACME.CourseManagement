@@ -28,6 +28,10 @@ namespace ACME.CourseManagement.Services.Services
 
 
             var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == courseName);
+            if (course == null)
+            {
+                return false;
+            }
             if (payment >= course.RegistrationFee)
             {
                 _paymentService.ProccessPayment(payment);

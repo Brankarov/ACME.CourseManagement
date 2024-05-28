@@ -25,7 +25,7 @@ namespace ACME.CourseManagement.Services.Services
             {
                 var student = _studentRepository.GetEnumerables().SingleOrDefault(x => x.Name == studentName);
                 var course = _courseRepository.GetEnumerables().SingleOrDefault(x => x.Name == courseName);
-                if (student != null && student != null  )
+                if (student != null && course != null  )
                 {
                     student.EnrollCourse(course);
                     return true;
