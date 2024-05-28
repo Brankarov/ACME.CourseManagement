@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ACME.CourseManagement.Services.Services.CourseService
 {
-    public class CourseService
+    public class CourseService : ICourseService
     {
         private readonly IPaymentService _paymentService;
         private readonly ICourseRepository _courseRepository;
@@ -20,6 +20,10 @@ namespace ACME.CourseManagement.Services.Services.CourseService
             _courseRepository = courseRepository;
         }
 
+        public IEnumerable<Course> GetAllCourses() 
+        {
+            return _courseRepository.GetEnumerables();
+        }
         public bool PaymentCourse(PaymentRequest request)
         {
             if (request.Amount <= 0)

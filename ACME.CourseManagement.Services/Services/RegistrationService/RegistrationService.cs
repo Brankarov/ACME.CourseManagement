@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ACME.CourseManagement.Services.Services.RegistrationService
 {
-    public class RegistrationService
+    public class RegistrationService : IRegistrationService
     {
         private readonly IStudentRepository _studentRepository;
         private readonly ICourseRepository _courseRepository;
@@ -25,9 +25,13 @@ namespace ACME.CourseManagement.Services.Services.RegistrationService
         {
             try
             {
-                if (request.StudentAge < Constants.MinimunAge && request.StudentAge > Constants.MaximunAge)
+                if (request == null)
                 {
-                    throw new ArgumentException("The age is not allowed to enroll");
+                    throw new Exception("request is null");
+                }
+                if (request.StudentAge < Constants.MinimunAge || request.StudentAge > Constants.MaximunAge)
+                {
+                    throw new Exception("The age is not allowed to enroll");
                 }
 
                 var student = new Student(request.StudentName, request.StudentAge);
@@ -43,10 +47,15 @@ namespace ACME.CourseManagement.Services.Services.RegistrationService
             }
         }
 
+
         public bool RegistrationCourse(CourseRequest request)
         {
             try
             {
+                if (request == null)
+                {
+                    throw new Exception("the argegument is null");
+                }
                 var course = new Course(request.CourseName, request.RegistrationFee, request.StarDate, request.EndDate);
                 if (course != null)
                 {
@@ -61,6 +70,15 @@ namespace ACME.CourseManagement.Services.Services.RegistrationService
 
                 throw new Exception(e.ToString());
             }
+        }
+        public IEnumerable<Student> GetAllRegisteredStudents()
+        {
+            return _studentRepository.GetEnumerables();
+        }
+
+        public IEnumerable<Course> GetAllRegisteredCourses()
+        {
+            return _courseRepository.GetEnumerables();
         }
     }
 }

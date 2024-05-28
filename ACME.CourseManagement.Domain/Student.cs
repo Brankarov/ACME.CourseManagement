@@ -1,4 +1,6 @@
 ﻿using ACME.CourseManagement.Domain.Common;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ACME.CourseManagement.Domain
 {
@@ -7,7 +9,7 @@ namespace ACME.CourseManagement.Domain
         public string Name { get; private set; }
         public int Age { get; private set; }
         public List<Course> Courses { get; private set; }
-        public Student( string name, int age) {
+        public Student( [NotNull]string name, int age) {
 
             if (string.IsNullOrEmpty(name))
             {

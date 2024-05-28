@@ -1,4 +1,10 @@
-﻿using System;
+﻿using ACME.CourseManagement.ApplicationServices;
+using ACME.CourseManagement.Data;
+using ACME.CourseManagement.Data.Interfaces;
+using ACME.CourseManagement.Services.Services.CourseService;
+using ACME.CourseManagement.Services.Services.EnrollService;
+using ACME.CourseManagement.Services.Services.RegistrationService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +14,20 @@ namespace ACME.CourseManagement.Test.Utils
 {
     public class ServicesTest
     {
-        protected OfficeRentalService Service;
-        protected ILocationRepository LocationRepository;
-        protected IOfficeRepository OfficeRepository;
-        protected IBookingRepository BookingRepository;
-
-        public OfficeRentalServiceTest()
+        //protected OfficeRentalService Service;
+        protected IEnrollService enrollService;
+        protected ICourseService courseService;
+        protected IRegistrationService registrationService;
+        protected IPaymentService paymentService;
+        protected IStudentRepository studentRepository;
+        protected ICourseRepository courseRepository;
+        public ServicesTest()
         {
-            LocationRepository = new LocationRepository();
-            OfficeRepository = new OfficeRepository();
-            BookingRepository = new BookingRepository();
-            Service = new OfficeRentalService(LocationRepository, OfficeRepository, BookingRepository);
+            studentRepository = new StudentRepository();
+            courseRepository = new CourseRepository();
+            enrollService = new EnrollService(courseRepository, studentRepository);
+            courseService = new CourseService(paymentService, courseRepository);
+            registrationService = new RegistrationService(studentRepository, courseRepository);
         }
     }
 }

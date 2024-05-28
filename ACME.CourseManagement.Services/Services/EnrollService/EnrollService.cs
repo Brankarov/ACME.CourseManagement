@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ACME.CourseManagement.Services.Services.EnrollService
 {
-    public class EnrollService
+    public class EnrollService : IEnrollService
     {
         private readonly ICourseRepository _courseRepository;
         private readonly IStudentRepository _studentRepository;

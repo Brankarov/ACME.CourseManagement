@@ -14,10 +14,11 @@ namespace ACME.CourseManagement.Test.Utils
             RegistrationFee = 15000, 
             StarDate = new DateTime(2024,5,10), 
             EndDate = new DateTime(2024, 6, 10) };
-        public static CourseRequest Math => Default.WithName("Math").WithRegistrationFee(25000);
+        public static CourseRequest Math => Default.WithName("").WithRegistrationFee(25000);
         public static CourseRequest History => Default.WithName("History").WithRegistrationFee(30000);
-        public static CourseRequest Chemistry => Default.WithName("Chemistry").WithRegistrationFee(90);
-        public static CourseRequest Sociologyt => Default.WithName("Sociology").WithRegistrationFee(70000);
+        public static CourseRequest Chemistry => Default.WithName("Chemistry").WithRegistrationFee(90).WithStarDate(new DateTime(0,0,0));
+        public static CourseRequest Sociology => Default.WithName("Sociology").WithRegistrationFee(0);
+        public static CourseRequest Physic => Default.WithName("Physic").WithRegistrationFee(750).WithEndDate(new DateTime(0,0,0));
 
         public static CourseRequest WithName(this CourseRequest request, string name)
         {
